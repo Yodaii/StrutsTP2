@@ -5,27 +5,19 @@
  */
 package objet_metiers;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author Yohann
  */
 public class Abonne {
-    private int id;
     private String identifiant;
     private String motdepasse;
-    private String nom;
-    private String prenom;
-    private String age;
+    private Set<Message> lesMessages = new HashSet<Message>();
     
     public Abonne(){}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getIdentifiant() {
         return identifiant;
@@ -42,28 +34,12 @@ public class Abonne {
     public void setMotdepasse(String motdepasse) {
         this.motdepasse = motdepasse;
     }
-
-    public String getNom() {
-        return nom;
+    
+    public Set<Message> getLesMessages() {
+        return lesMessages;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
+    public void setLesMessages(Set<Message> lesMessages) {
+        this.lesMessages = lesMessages;
     }
 }

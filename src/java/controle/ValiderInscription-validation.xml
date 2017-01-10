@@ -31,9 +31,4 @@
             <message key="prenom.required"/>
         </field-validator>
     </field>
-    <field name="age">
-        <field-validator type="requiredstring">
-            <message key="age.required"/>
-        </field-validator>
-    </field>
 </validators>
