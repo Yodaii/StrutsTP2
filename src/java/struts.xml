@@ -16,12 +16,21 @@
         </action>
         
         <action name="ValiderInscription" class="controle.ValiderInscription" >
-            <result name="input">/inscription.jsp</result>
+            <result name="input">/inscription_particulier.jsp</result>
+            <result name="success">/accueil.jsp</result>
+        </action>
+        
+        <action name="ValiderInscriptionEntr" class="controle.ValiderInscriptionEntr" >
+            <result name="input">/inscription_entreprise.jsp</result>
             <result name="success">/accueil.jsp</result>
         </action>
             
-        <action name="Inscription">
-            <result>/inscription.jsp</result>
+        <action name="InscriptionPart">
+            <result>/inscription_particulier.jsp</result>
+        </action>
+        
+        <action name="InscriptionEntr">
+            <result>/inscription_entreprise.jsp</result>
         </action>
     </package>  
 </struts>

@@ -19,8 +19,11 @@
                 <s:submit key="identification.submit" />
 	</s:form>
         
-        <s:url action="Inscription" var="inscription" ></s:url>
-        <s:a href="%{inscription}">Inscription</s:a>   
+        <s:url action="InscriptionPart" var="inscription" ></s:url>
+        <s:a href="%{inscription}">Inscription Particulier</s:a> 
+        
+        <s:url action="InscriptionEntr" var="inscription" ></s:url>
+        <s:a href="%{inscription}">Inscription Entreprise</s:a>
         
         <s:if test="hasErrors()">
             <div id="message_erreur">
