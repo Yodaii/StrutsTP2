@@ -6,6 +6,9 @@
             <generator class="assigned"/>
         </id>
         <property name="motdepasse" />
+        <property name="estAdmin">
+            <column sql-type="BOOLEAN" not-null="true" name="estAdmin" default="false"/>
+        </property>
         <set name="lesMessages" inverse="true" >
             <key column="id_abonne"/>
             <one-to-many class="objet_metiers.Message" />

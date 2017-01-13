@@ -15,10 +15,9 @@
         <field-validator type="requiredstring">
             <message key="motdepasse.required"/>
         </field-validator>
-        <field-validator type="stringlength">
-            <param name="minLength">6</param>
-            <param name="maxLength">12</param>
-            <message key="motdepasse.length"/>
+        <field-validator type="regex">
+            <param name="regex"><![CDATA[((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%!*]).{8,100})]]></param>
+            <message key="motdepasse.condition"/>
         </field-validator>
     </field>
 </validators>

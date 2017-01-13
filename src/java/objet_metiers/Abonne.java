@@ -15,6 +15,7 @@ import java.util.Set;
 public class Abonne {
     private String identifiant;
     private String motdepasse;
+    private boolean estAdmin;
     private Set<Message> lesMessages = new HashSet<Message>();
     
     public Abonne(){}
@@ -33,6 +34,14 @@ public class Abonne {
 
     public void setMotdepasse(String motdepasse) {
         this.motdepasse = motdepasse;
+    }
+
+    public boolean isEstAdmin() {
+        return estAdmin;
+    }
+
+    public void setEstAdmin(boolean estAdmin) {
+        this.estAdmin = estAdmin;
     }
     
     public Set<Message> getLesMessages() {
