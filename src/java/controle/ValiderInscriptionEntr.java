@@ -55,7 +55,7 @@ public class ValiderInscriptionEntr extends ActionSupport implements ModelDriven
         uneSession.save(uneEntr);
         tx.commit();
         
-        session.put("uneEntr", uneEntr);
+        session.put("unAbon", uneEntr);
         return SUCCESS;
     }
 

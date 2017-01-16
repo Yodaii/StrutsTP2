@@ -13,7 +13,6 @@ import java.util.Set;
  * @author Yohann
  */
 public class Annuaire {
-    private int id;
     private String nom;
     private Set<Abonne> listeAbonne = new HashSet<Abonne>();
     
@@ -25,14 +24,6 @@ public class Annuaire {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-    
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
     
     public Set<Abonne> getListeAbonne(){

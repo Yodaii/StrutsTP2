@@ -2,13 +2,12 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="objet_metiers.Annuaire" table="annuaire">
-        <id name="id" column="id">
-            <generator class="increment" />
+        <id name="nom" column="nom">
+            <generator class="assigned"/>
         </id>
-        <property name="nom" />
         <set name="listeAbonne" table="listeAbonne">
-            <key column="id"/>
-            <many-to-many column="idAbonne" class="objet_metiers.Abonne"/>
+            <key column="nom"/>
+            <many-to-many column="identifiant" class="objet_metiers.Abonne"/>
         </set> 
     </class>
 </hibernate-mapping>

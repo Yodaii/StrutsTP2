@@ -52,7 +52,7 @@ public class ValiderInscription extends ActionSupport implements ModelDriven, Se
         uneSession.save(unPart);
         tx.commit();
         
-        session.put("unPart", unPart);
+        session.put("unAbon", unPart);
         return SUCCESS;
     }
 

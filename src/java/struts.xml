@@ -4,6 +4,11 @@
 <struts>
     <constant name="struts.custom.i18n.resources" value="controle.package" />  
     <package name="Exemple02" namespace="/" extends="struts-default">  
+        <interceptors>
+            <interceptor name="annuaire" class="intercepteur.GetAnnuaire"/>
+           
+        </interceptors>
+        
         <default-action-ref name="Identification" />
       
         <action name="Identification" >
@@ -26,10 +31,12 @@
         </action>
             
         <action name="InscriptionPart">
+            <interceptor-ref name="annuaire"/>
             <result>/inscription_particulier.jsp</result>
         </action>
         
         <action name="InscriptionEntr">
+            <interceptor-ref name="annuaire"/>
             <result>/inscription_entreprise.jsp</result>
         </action>
     </package>  
