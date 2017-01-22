@@ -16,7 +16,8 @@ public class Abonne {
     private String identifiant;
     private String motdepasse;
     private boolean estAdmin;
-    private Set<Message> lesMessages = new HashSet<Message>();
+    private Annuaire annuaire;
+    private Set<Message> lesMessages = new HashSet<>();
     
     public Abonne(){}
 
@@ -42,6 +43,14 @@ public class Abonne {
 
     public void setEstAdmin(boolean estAdmin) {
         this.estAdmin = estAdmin;
+    }
+
+    public Annuaire getAnnuaire() {
+        return annuaire;
+    }
+
+    public void setAnnuaire(Annuaire annuaire) {
+        this.annuaire = annuaire;
     }
     
     public Set<Message> getLesMessages() {

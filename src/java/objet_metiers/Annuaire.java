@@ -14,7 +14,7 @@ import java.util.Set;
  */
 public class Annuaire {
     private String nom;
-    private Set<Abonne> listeAbonne = new HashSet<Abonne>();
+    private Set<Abonne> listeAbonne = new HashSet<>();
     
     public Annuaire(){}
 

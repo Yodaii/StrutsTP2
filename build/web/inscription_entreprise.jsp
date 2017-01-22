@@ -18,6 +18,15 @@
 		<s:textfield key="inscription.identifiant" name="identifiant" cssClass="input" />
                 <s:password key="inscription.motdepasse" name="motdepasse" cssClass="input" />   
                 <s:textfield key="inscription_entr.rs" name="raisonSociale" cssClass="input" />
+                <s:if test="#session.annuaires != null">
+                    <s:select label="Annuaire"
+                          headerKey="" headerValue="Choisissez votre annuaire"
+                          list="#session.annuaires"
+                          name="annuaire" />
+                </s:if>
+                <s:else>
+                    pas d'annuaire
+                </s:else>
                 <s:submit value="Inscription" />
 	</s:form>  
         

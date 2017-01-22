@@ -25,4 +25,9 @@
             <message key="rs.required"/>
         </field-validator>
     </field>
+    <field name="annuaire">
+        <field-validator type="requiredstring">
+            <message key="annuaire.required" />
+        </field-validator>
+    </field>
 </validators>

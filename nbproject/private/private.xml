@@ -3,21 +3,26 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderIdentification.properties</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderIdentification-validation.xml</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscriptionEntr.properties</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/web/identification.jsp</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/GetAnnuaire.java</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderMessage-validation.xml</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/objet_metiers/annuaire.hbm.xml</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/objet_metiers/Annuaire.java</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/GetMessagesAnnuaire.java</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/struts.xml</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderMessage.properties</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/objet_metiers/Message.java</file>
             <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/objet_metiers/message.hbm.xml</file>
             <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/web/accueil.jsp</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscriptionEntr-validation.xml</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscriptionEntr.java</file>
             <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/objet_metiers/abonne.hbm.xml</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscription-validation.xml</file>
             <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscription.java</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscription-validation.xml</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/web/inscription_particulier.jsp</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderMessage.java</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/web/inscription_entreprise.jsp</file>
             <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/objet_metiers/Abonne.java</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/package.properties</file>
             <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderInscription.properties</file>
-            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/ValiderIdentification.java</file>
+            <file>file:/C:/Users/Yohann/Desktop/Projet/struts_/src/java/controle/package.properties</file>
         </group>
     </open-files>
 </project-private>

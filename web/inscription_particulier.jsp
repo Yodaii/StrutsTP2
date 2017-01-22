@@ -20,10 +20,10 @@
                 <s:textfield key="inscription_part.nom" name="nom" cssClass="input" /> 
                 <s:textfield key="inscription_part.prenom" name="prenom" cssClass="input" />  
                 <s:if test="#session.annuaires != null">
-                    <s:select label="Choisissez votre annuaire"
-                          headerKey="-1" headerValue="Choisissez votre annuaire"
+                    <s:select label="Annuaire"
+                          headerKey="" headerValue="Choisissez votre annuaire"
                           list="#session.annuaires"
-                          name="annuaires" />
+                          name="annuaire" />
                 </s:if>
                 <s:else>
                     pas d'annuaire

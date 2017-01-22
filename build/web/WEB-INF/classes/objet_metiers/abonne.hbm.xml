@@ -9,17 +9,18 @@
         <property name="estAdmin">
             <column sql-type="BOOLEAN" not-null="true" name="estAdmin" default="false"/>
         </property>
-        <set name="lesMessages" inverse="true" >
-            <key column="id_abonne"/>
+        <set name="lesMessages" cascade="all" inverse="true" >
+            <key column="identifiant"/>
             <one-to-many class="objet_metiers.Message" />
         </set>
+        <many-to-one name="annuaire" column="annuaire" class="objet_metiers.Annuaire" /> 
         <joined-subclass name="objet_metiers.Particulier" table="particulier">
-            <key column="identifiant"/>
+            <key column="identifiant" on-delete="cascade"/>
             <property name="nom"/>
             <property name="prenom"/>
         </joined-subclass>
         <joined-subclass name="objet_metiers.Entreprise" table="entreprise">
-            <key column="identifiant"/>
+            <key column="identifiant" on-delete="cascade"/>
             <property name="raisonSociale" column="raison_sociale"/>
         </joined-subclass>
     </class>

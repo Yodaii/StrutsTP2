@@ -11,6 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import java.util.Map;
 import objet_metiers.Abonne;
+import objet_metiers.Annuaire;
 import objet_metiers.Entreprise;
 import objet_metiers.Particulier;
 import org.apache.struts2.interceptor.SessionAware;
@@ -22,40 +23,74 @@ import util.HibernateUtil;
  *
  * @author Yohann
  */
-public class ValiderInscriptionEntr extends ActionSupport implements ModelDriven, SessionAware{
-    private Entreprise uneEntr = new Entreprise();
+public class ValiderInscriptionEntr extends ActionSupport implements SessionAware {
+
+    private String identifiant;
+    private String motdepasse;
+    private String raisonSociale;
+    private String annuaire;
     private Map<String, Object> session;
     private Session uneSession;
-    private Transaction tx;
-    
-    @Override
-    public Object getModel() {
-        return uneEntr;
-    }
-    
-    public Entreprise getUneEntr() {
-        return uneEntr;
+
+    public String getIdentifiant() {
+        return identifiant;
     }
 
-    public void setUneEntr(Entreprise uneEntr) {
-        this.uneEntr = uneEntr;
+    public void setIdentifiant(String identifiant) {
+        this.identifiant = identifiant;
     }
-    
+
+    public String getMotdepasse() {
+        return motdepasse;
+    }
+
+    public void setMotdepasse(String motdepasse) {
+        this.motdepasse = motdepasse;
+    }
+
+    public String getRaisonSociale() {
+        return raisonSociale;
+    }
+
+    public void setRaisonSociale(String raisonSociale) {
+        this.raisonSociale = raisonSociale;
+    }
+
+    public String getAnnuaire() {
+        return annuaire;
+    }
+
+    public void setAnnuaire(String annuaire) {
+        this.annuaire = annuaire;
+    }
+
     @Override
     public String execute() throws Exception {
         uneSession = HibernateUtil.currentSession();
-        Abonne unAbon = (Abonne) uneSession.get(Abonne.class, uneEntr.getIdentifiant());
-        if (unAbon!=null)   
-         { addActionError("L'abonné existe déjà !");
+        Abonne unAbon = (Abonne) uneSession.get(Abonne.class, identifiant);
+        if (unAbon != null) {
+            addActionError("L'abonné existe déjà !");
             return INPUT;
         }
+
+        try {
+            uneSession.getTransaction().begin();
+            Annuaire annu = (Annuaire) uneSession.get(Annuaire.class, annuaire);
+            Entreprise uneEntr = new Entreprise();
+            uneEntr.setIdentifiant(identifiant);
+            uneEntr.setMotdepasse(motdepasse);
+            uneEntr.setRaisonSociale(raisonSociale);
+            uneEntr.setAnnuaire(annu);
+            uneSession.save(uneEntr);
+            uneSession.getTransaction().commit();
+
+            session.put("annuaire", annu);
+            session.put("unAbon", uneEntr);
+            session.put("session", uneSession);
+        } catch(RuntimeException e){
+            uneSession.getTransaction().rollback();
+        }
         
-        tx = uneSession.beginTransaction();
-        
-        uneSession.save(uneEntr);
-        tx.commit();
-        
-        session.put("unAbon", uneEntr);
         return SUCCESS;
     }
 

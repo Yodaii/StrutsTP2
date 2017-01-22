@@ -4,11 +4,6 @@
 <struts>
     <constant name="struts.custom.i18n.resources" value="controle.package" />  
     <package name="Exemple02" namespace="/" extends="struts-default">  
-        <interceptors>
-            <interceptor name="annuaire" class="intercepteur.GetAnnuaire"/>
-           
-        </interceptors>
-        
         <default-action-ref name="Identification" />
       
         <action name="Identification" >
@@ -22,22 +17,35 @@
         
         <action name="ValiderInscription" class="controle.ValiderInscription" >
             <result name="input">/inscription_particulier.jsp</result>
-            <result name="success">/accueil.jsp</result>
+            <result name="success" type="chain">GetMessagesAnnuaire</result>
+        </action>
+        
+        <action name="ValiderMessage" class="controle.ValiderMessage">
+            <result name="input">/accueil.jsp</result>
+            <result name="success" type="chain">GetMessagesAnnuaire</result>
         </action>
         
         <action name="ValiderInscriptionEntr" class="controle.ValiderInscriptionEntr" >
             <result name="input">/inscription_entreprise.jsp</result>
-            <result name="success">/accueil.jsp</result>
+            <result name="success" type="chain">GetMessagesAnnuaire</result>
         </action>
             
-        <action name="InscriptionPart">
-            <interceptor-ref name="annuaire"/>
-            <result>/inscription_particulier.jsp</result>
+        <action name="InscriptionPart" class="controle.GetAnnuaire">
+            <result name="input">/identification.jsp</result>
+            <result name="success">/inscription_particulier.jsp</result>
         </action>
         
-        <action name="InscriptionEntr">
-            <interceptor-ref name="annuaire"/>
-            <result>/inscription_entreprise.jsp</result>
+        <action name="InscriptionEntr" class="controle.GetAnnuaire">
+            <result name="input">/identification.jsp</result>
+            <result name="success" >/inscription_entreprise.jsp</result>
+        </action>
+        
+        <action name="GetMessagesAnnuaire" class="controle.GetMessagesAnnuaire">
+             <result name="success">/accueil.jsp</result>
+        </action>
+        
+        <action name="Desinscription" class="controle.Desinscription">
+            <result name="success" type="chain">Identification</result>
         </action>
     </package>  
 </struts>

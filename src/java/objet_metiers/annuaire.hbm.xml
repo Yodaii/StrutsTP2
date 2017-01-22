@@ -5,9 +5,9 @@
         <id name="nom" column="nom">
             <generator class="assigned"/>
         </id>
-        <set name="listeAbonne" table="listeAbonne">
+        <set name="listeAbonne" inverse="true" >
             <key column="nom"/>
-            <many-to-many column="identifiant" class="objet_metiers.Abonne"/>
-        </set> 
+            <one-to-many class="objet_metiers.Abonne" />
+        </set>
     </class>
 </hibernate-mapping>

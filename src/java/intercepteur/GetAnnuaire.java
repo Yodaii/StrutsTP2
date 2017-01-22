@@ -5,6 +5,8 @@
  */
 package intercepteur;
 
+import static com.opensymphony.xwork2.Action.INPUT;
+import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import java.util.ArrayList;
@@ -30,14 +32,12 @@ public class GetAnnuaire extends AbstractInterceptor{
         uneSession = HibernateUtil.currentSession();
         session = ai.getInvocationContext().getSession();
         List<Annuaire> annuaires = (List<Annuaire>)uneSession.createCriteria(Annuaire.class).list();
-        System.out.println("ici ##################################################################################################");
+        
         if(annuaires.isEmpty()){
-            return "vide";
+            return INPUT;
         }else{
-            System.out.println(annuaires.size());
-            System.out.println(session);
             session.put("annuaires", annuaires);
-            return "exist";
+            return SUCCESS;
         }
     }
 }
