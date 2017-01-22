@@ -12,7 +12,7 @@
         
         <action name="ValiderIdentification" class="controle.ValiderIdentification" >
             <result name="input">/identification.jsp</result>
-            <result name="success">/accueil.jsp</result>
+            <result name="success" type="chain">GetMessagesAnnuaire</result>
         </action>
         
         <action name="ValiderInscription" class="controle.ValiderInscription" >

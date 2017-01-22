@@ -43,6 +43,7 @@ public class ValiderIdentification extends ActionSupport implements SessionAware
             return INPUT;
         }
         session.put("unAbon", unAbon);
+        session.put("annuaire", unAbon.getAnnuaire());
         session.put("session", uneSession);
         return SUCCESS;
     }
