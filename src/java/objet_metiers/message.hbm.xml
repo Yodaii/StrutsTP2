@@ -7,6 +7,6 @@
         </id>
         <property name="objet" />
         <property name="corps" />
-        <many-to-one name="abonne" column="abonne" class="objet_metiers.Abonne" /> 
+        <many-to-one name="abonne" column="identifiant_abonne" class="objet_metiers.Abonne" /> 
     </class>
 </hibernate-mapping>

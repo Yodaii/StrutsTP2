@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="objet_metiers.Annuaire" table="annuaire">
-        <id name="nom" column="nom">
+        <id name="nom" column="nom_annuaire">
             <generator class="assigned"/>
         </id>
         <set name="listeAbonne" inverse="true" >
-            <key column="nom"/>
+            <key column="nom_annuaire"/>
             <one-to-many class="objet_metiers.Abonne" />
         </set>
     </class>

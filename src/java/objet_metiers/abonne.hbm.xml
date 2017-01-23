@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="objet_metiers.Abonne" table="abonne">
-        <id name="identifiant">
+        <id name="identifiant" column="identifiant_abonne">
             <generator class="assigned"/>
         </id>
         <property name="motdepasse" />
@@ -10,10 +10,10 @@
             <column sql-type="BOOLEAN" not-null="true" name="estAdmin" default="false"/>
         </property>
         <set name="lesMessages" cascade="all" inverse="true" >
-            <key column="identifiant"/>
+            <key column="identifiant_abonne"/>
             <one-to-many class="objet_metiers.Message" />
         </set>
-        <many-to-one name="annuaire" column="annuaire" class="objet_metiers.Annuaire" /> 
+        <many-to-one name="annuaire" column="nom_annuaire" class="objet_metiers.Annuaire" /> 
         <joined-subclass name="objet_metiers.Particulier" table="particulier">
             <key column="identifiant" on-delete="cascade"/>
             <property name="nom"/>
