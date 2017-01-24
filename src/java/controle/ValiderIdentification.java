@@ -39,13 +39,17 @@ public class ValiderIdentification extends ActionSupport implements SessionAware
         uneSession = HibernateUtil.currentSession();
         Abonne unAbon = (Abonne) uneSession.get(Abonne.class, identifiant);
         if (unAbon == null || !unAbon.getMotdepasse().equals(motdepasse)) {
-            addActionError("L'abonné n'existe pas !");
             return INPUT;
         }
         session.put("unAbon", unAbon);
         session.put("annuaire", unAbon.getAnnuaire());
         session.put("session", uneSession);
-        return SUCCESS;
+        
+        if(unAbon.isEstAdmin()){
+            return "admin";
+        }else{
+            return "abonne";
+        }
     }
 
     @Override

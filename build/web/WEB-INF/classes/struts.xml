@@ -3,7 +3,7 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
     <constant name="struts.custom.i18n.resources" value="controle.package" />  
-    <package name="Exemple02" namespace="/" extends="struts-default">  
+    <package name="Exemple02" namespace="/" extends="struts-default"> 
         <default-action-ref name="Identification" />
       
         <action name="Identification" >
@@ -12,7 +12,8 @@
         
         <action name="ValiderIdentification" class="controle.ValiderIdentification" >
             <result name="input">/identification.jsp</result>
-            <result name="success" type="chain">GetMessagesAnnuaire</result>
+            <result name="abonne" type="chain">GetMessagesAnnuaire</result>
+            <result name="admin">/inscription_entreprise.jsp</result>
         </action>
         
         <action name="ValiderInscription" class="controle.ValiderInscription" >
@@ -41,7 +42,7 @@
         </action>
         
         <action name="GetMessagesAnnuaire" class="controle.GetMessagesAnnuaire">
-             <result name="success">/accueil.jsp</result>
+            <result name="success">/accueil.jsp</result>
         </action>
         
         <action name="Desinscription" class="controle.Desinscription">
